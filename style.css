@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #121212;
+    color: white;
+    overflow-x: hidden;
+}
+
+body.stop-scrolling {
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Landing Page */
+.landing-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), 
+                url('https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?q=80&w=2000'); 
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+.glass-box {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+    margin-bottom: 30px;
+}
+
+.glass-box h1 span { color: #ff9f43; }
+
+.main-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background: #ff9f43;
+    padding: 15px 45px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: 0.4s;
+}
+
+/* Menu Content */
+#menu-section {
+    display: none;
+    padding-bottom: 100px;
+}
+
+.reveal {
+    opacity: 0;
+    transition: 1.2s all ease;
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.left-slide { transform: translateX(-150px); }
+.right-slide { transform: translateX(150px); }
+
+.reveal.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.item-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+}
+
+.sec-btn {
+    width: 320px;
+    padding: 20px;
+    background: transparent;
+    color: #ff9f43;
+    border: 2px solid #ff9f43;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sec-btn:hover {
+    background: rgba(255, 159, 67, 0.1);
+}
+
+/* Detail Box - Hidden by default */
+.detail-box {
+    display: none;
+    width: 320px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #ddd;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 12px;
+    border-left: 4px solid #ff9f43;
+    text-align: left;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.detail-box ul { list-style: circle; padding-left: 20px; }
+.detail-box li { margin-bottom: 10px; }
+
+.quote-container { max-width: 80% ; opacity: 0.7; font-style: italic; margin-top: 20px;}
+footer { text-align: center; padding: 40px; color: #555; }
