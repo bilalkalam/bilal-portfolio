@@ -52,8 +52,8 @@
         /* Buttons */
         .btn {
             display: inline-block;
-            margin: 10px;
-            padding: 15px 35px;
+            margin: 8px;
+            padding: 12px 30px;
             background: transparent;
             color: #ff9f43;
             border: 2px solid #ff9f43;
@@ -64,6 +64,7 @@
             transition: 0.3s;
             text-transform: uppercase;
             letter-spacing: 1px;
+            width: 100%;
         }
 
         .btn:hover { background: #ff9f43; color: black; transform: translateY(-3px); }
@@ -85,25 +86,40 @@
         h2 { color: #ff9f43; margin-bottom: 25px; font-size: 2.2rem; text-transform: uppercase; }
         .content-box {
             max-width: 800px;
+            width: 90%;
             line-height: 1.8;
             font-size: 1.05rem;
             background: rgba(255,255,255,0.03);
-            padding: 35px;
+            padding: 30px;
             border-radius: 15px;
             border: 1px solid rgba(255, 159, 67, 0.2);
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             text-align: left;
         }
         ul { list-style: none; text-align: left; }
-        li { margin-bottom: 20px; border-left: 4px solid #ff9f43; padding-left: 15px; }
-        strong { color: #ff9f43; font-size: 1.2rem; }
-        .inst { color: #ccc; font-style: italic; display: block; margin-top: 5px; }
+        li { margin-bottom: 15px; border-left: 4px solid #ff9f43; padding-left: 15px; }
+        strong { color: #ff9f43; font-size: 1.1rem; }
+        .inst { color: #ccc; font-style: italic; display: block; margin-top: 3px; }
+        .year { float: right; color: #ff9f43; font-weight: bold; }
         
         /* Contact Link Styles */
         .contact-box a { color: white; text-decoration: none; transition: 0.3s; }
         .contact-box a:hover { color: #ff9f43; }
         .contact-item { margin-bottom: 15px; display: flex; align-items: center; gap: 15px; }
         .contact-item i { color: #ff9f43; width: 20px; }
+
+        .menu-grid {
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 10px; 
+            max-width: 500px;
+            width: 100%;
+        }
+
+        @media (max-width: 500px) {
+            .menu-grid { grid-template-columns: 1fr; }
+            h2 { font-size: 1.8rem; }
+        }
 
     </style>
 </head>
@@ -114,16 +130,17 @@
             <h1>Hello, I am <span>Bilal Kalam A</span></h1>
             <p>Mechanical Engineer | Portfolio</p>
             <br>
-            <button class="btn" onclick="showPage('menu')">Let's Go!!!</button>
+            <button class="btn" style="width: auto;" onclick="showPage('menu')">Let's Go!!!</button>
         </div>
     </div>
 
     <div id="menu" class="page">
         <h2>Explore My Profile</h2>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; max-width: 500px;">
+        <div class="menu-grid">
             <button class="btn" onclick="showPage('about')">About Me</button>
             <button class="btn" onclick="showPage('qual')">Education</button>
             <button class="btn" onclick="showPage('skills')">Skills</button>
+            <button class="btn" onclick="showPage('projects')">Projects</button>
             <button class="btn" onclick="showPage('cert')">Certificates</button>
             <button class="btn" onclick="showPage('contact')">Contact</button>
         </div>
@@ -155,6 +172,31 @@
         <button class="back-btn" onclick="showPage('menu')">← Back to Menu</button>
     </div>
 
+    <div id="projects" class="page">
+        <h2>Personal Projects</h2>
+        <div class="content-box">
+            <ul>
+                <li>
+                    <span class="year">2025</span>
+                    <strong>Detailed AutoCAD design of a GATE VALVE CHAMBER</strong>
+                </li>
+                <li>
+                    <span class="year">2025</span>
+                    <strong>AutoCAD design of a COMMERCIAL WATER TANK</strong>
+                </li>
+                <li>
+                    <span class="year">2025</span>
+                    <strong>Designing and Fabrication of Electro-Kinetic Road Ramp</strong>
+                </li>
+                <li>
+                    <span class="year">2022</span>
+                    <strong>Design and Fabrication of a Milling attachment for Lathe</strong>
+                </li>
+            </ul>
+        </div>
+        <button class="back-btn" onclick="showPage('menu')">← Back to Menu</button>
+    </div>
+
     <div id="skills" class="page">
         <h2>Technical Skills</h2>
         <div class="content-box">
@@ -163,6 +205,7 @@
                 <li><b>Machines:</b> Lathe, Shaper, Slotter, Milling machines</li>
                 <li><b>Core Engineering:</b> Machine Design, Automobile Systems, Fluid Mechanics</li>
                 <li><b>Software:</b> MS Office Suite (Word, Excel, PowerPoint)</li>
+                <li><b>Others:</b> Engineering Process, Industrial Safety Management</li>
             </ul>
         </div>
         <button class="back-btn" onclick="showPage('menu')">← Back to Menu</button>
@@ -175,7 +218,6 @@
                 <li>Certified in AutoCAD Mechanical</li>
                 <li>NPTEL Certificate in Advanced Manufacturing Process</li>
                 <li>Level 1 & 2 Certification in NSQF (Turning)</li>
-                <li>Industrial Safety Management Techniques</li>
             </ul>
         </div>
         <button class="back-btn" onclick="showPage('menu')">← Back to Menu</button>
